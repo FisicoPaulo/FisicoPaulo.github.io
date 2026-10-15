@@ -44,11 +44,13 @@ $$
 
 $$
 T = \frac{2\pi}{20\ \text{rad/s}} = \frac{\pi}{10}\ \text{s} \approx 0{,}314\ \text{s},
-\qquad
+$$
+
+$$
 f = \frac{1}{T} = \frac{10}{\pi}\ \text{Hz} \approx 3{,}18\ \text{Hz}.
 $$
 
-$$\omega = 20\ \text{rad/s}, \quad T \approx 0{,}314\ \text{s}, \quad f \approx 3{,}18\ \text{Hz}$$
+$$\begin{gathered} \omega = 20\ \text{rad/s} \\ T \approx 0{,}314\ \text{s} \\ f \approx 3{,}18\ \text{Hz} \end{gathered}$$
 {: .resultado}
 
 ### (b) Velocidade e aceleração máximas
@@ -71,7 +73,10 @@ $$v_{\max} = 2{,}0\ \text{m/s}, \quad a_{\max} = 40\ \text{m/s}^2$$
 Por [F3]:
 
 $$
-E = \frac{1}{2}(200\ \text{N/m})(0{,}10\ \text{m})^2 = \frac{1}{2}(200)(0{,}010)\ \text{J} = 1{,}0\ \text{J}.
+\begin{aligned}
+E &= \frac{1}{2}(200\ \text{N/m})(0{,}10\ \text{m})^2 \\
+  &= \frac{1}{2}(200)(0{,}010)\ \text{J} = 1{,}0\ \text{J}.
+\end{aligned}
 $$
 
 Conferência: no equilíbrio toda a energia é cinética, $$\tfrac{1}{2}m v_{\max}^2 = \tfrac{1}{2}(0{,}50)(2{,}0)^2 = 1{,}0\ \text{J}$$. Bate.
@@ -84,11 +89,17 @@ $$E = 1{,}0\ \text{J}$$
 Por [F4]:
 
 $$
-A^2 - x^2 = (0{,}10)^2 - (0{,}06)^2 = 0{,}0100 - 0{,}0036 = 0{,}0064\ \text{m}^2,
+\begin{aligned}
+A^2 - x^2 &= (0{,}10)^2 - (0{,}06)^2 \\
+          &= 0{,}0100 - 0{,}0036 = 0{,}0064\ \text{m}^2,
+\end{aligned}
 $$
 
 $$
-v = (20\ \text{rad/s})\sqrt{0{,}0064\ \text{m}^2} = (20)(0{,}08)\ \text{m/s} = 1{,}6\ \text{m/s}.
+\begin{aligned}
+v &= (20\ \text{rad/s})\sqrt{0{,}0064\ \text{m}^2} \\
+  &= (20)(0{,}08)\ \text{m/s} = 1{,}6\ \text{m/s}.
+\end{aligned}
 $$
 
 Conferência pela energia: $$\tfrac{1}{2}(0{,}50)(1{,}6)^2 + \tfrac{1}{2}(200)(0{,}06)^2 = 0{,}64 + 0{,}36 = 1{,}0\ \text{J}$$.

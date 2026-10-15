@@ -63,7 +63,11 @@ $$
 ### Adiabático (sem troca de calor)
 
 $$
-Q = 0, \qquad W = -\Delta U, \qquad pV^{\gamma} = \text{constante},
+Q = 0, \qquad W = -\Delta U,
+$$
+
+$$
+pV^{\gamma} = \text{constante},
 $$
 
 $$

@@ -47,7 +47,10 @@ $$\Delta U = 0$$
 Por [F3]:
 
 $$
-W = (2{,}0\ \text{mol})\,(8{,}314\ \text{J/(mol·K)})\,(300\ \text{K})\,\ln 2 .
+\begin{aligned}
+W &= (2{,}0\ \text{mol})\,(8{,}314\ \text{J/(mol·K)}) \\
+  &\quad \times (300\ \text{K})\,\ln 2 .
+\end{aligned}
 $$
 
 Primeiro o produto: $$(2{,}0)(8{,}314)(300) = 4988{,}4\ \text{J}$$. Com $$\ln 2 \approx 0{,}6931$$:

@@ -26,10 +26,15 @@ pdf: /assets/pdf/lista2-q5.pdf # opcional: botão "Baixar PDF"
    - `{: .ferramenta}` caixa cinza para as ferramentas [F1], [F2]...
    - `{: .resultado}` caixa pêssego com o rótulo "Resultado"
    - `{: .dica}` anotação manuscrita
+   - Contas longas: quebre em linhas com `\begin{aligned} ... \end{aligned}` (use `&=` para alinhar e `\\` para pular linha). No celular o site ainda encolhe sozinho a equação que não couber, mas a quebra fica mais legível.
 5. Todo material já tem o botão "Baixar em PDF", que gera o PDF da própria página (versão clara, pronta para imprimir). Se quiser oferecer também um PDF próprio (LaTeX), coloque-o em `assets/pdf/` e aponte no campo `pdf:`.
 6. Faça commit em `main`. O GitHub Pages atualiza o site em cerca de um minuto.
 
 Os arquivos em `_solucionarios/` e `_resumos/` marcados como "Exercício modelo" são exemplos e podem ser apagados.
+
+## Celular e computador
+
+O layout se adapta da tela de 320 px (celular pequeno) até monitores largos: menu e botões com área de toque maior, tabelas que viram cartões no celular e equações que se ajustam à largura.
 
 ## Monitoramento de acesso
 

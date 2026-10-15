@@ -61,7 +61,9 @@ Daí saem os máximos: $$v_{\max} = \omega A$$ (no equilíbrio) e $$a_{\max} = \
 
 $$
 T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{m}{k}},
-\qquad
+$$
+
+$$
 f = \frac{1}{T} = \frac{\omega}{2\pi}.
 $$
 
