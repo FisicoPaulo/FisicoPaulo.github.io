@@ -1,0 +1,4 @@
+<button type="button" class="botao {% if page.pdf %}botao-linha{% endif %}" data-salvar-pdf
+  data-goatcounter-click="pdf-pagina{{ page.url }}" data-goatcounter-title="PDF da página: {{ page.title | escape }}">
+  {% if page.pdf %}Salvar esta página em PDF{% else %}Baixar em PDF ↓{% endif %}
+</button>

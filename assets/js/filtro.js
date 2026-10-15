@@ -30,3 +30,9 @@ document.querySelectorAll('[data-filtros]').forEach(function (bloco) {
   });
   busca.addEventListener('input', aplicar);
 });
+
+// Botão "Baixar em PDF": abre a janela de impressão, onde a pessoa escolhe "Salvar como PDF".
+// O estilo @media print do style.css deixa a página limpa, em fundo branco.
+document.querySelectorAll('[data-salvar-pdf]').forEach(function (botao) {
+  botao.addEventListener('click', function () { window.print(); });
+});

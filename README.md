@@ -26,7 +26,7 @@ pdf: /assets/pdf/lista2-q5.pdf # opcional: botão "Baixar PDF"
    - `{: .ferramenta}` caixa cinza para as ferramentas [F1], [F2]...
    - `{: .resultado}` caixa pêssego com o rótulo "Resultado"
    - `{: .dica}` anotação manuscrita
-5. PDFs (solucionários em LaTeX) vão em `assets/pdf/`.
+5. Todo material já tem o botão "Baixar em PDF", que gera o PDF da própria página (versão clara, pronta para imprimir). Se quiser oferecer também um PDF próprio (LaTeX), coloque-o em `assets/pdf/` e aponte no campo `pdf:`.
 6. Faça commit em `main`. O GitHub Pages atualiza o site em cerca de um minuto.
 
 Os arquivos em `_solucionarios/` e `_resumos/` marcados como "Exercício modelo" são exemplos e podem ser apagados.

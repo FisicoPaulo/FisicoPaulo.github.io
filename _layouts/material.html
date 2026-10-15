@@ -3,6 +3,7 @@ layout: default
 ---
 {% assign colecao = site[page.collection] %}
 <article class="material">
+  <p class="so-impressao cabecalho-impressao">physics.jpaulo / estudos · {{ site.url }}{{ page.url | relative_url }}</p>
   <a class="voltar" href="{{ '/' | append: page.collection | append: '/' | relative_url }}">← {{ page.collection | capitalize | replace: 'Solucionarios', 'Solucionários' }}</a>
   <header class="material-topo">
     <span class="card-tipo">{{ page.tipo }} · {{ page.disciplina }}</span>
@@ -13,13 +14,17 @@ layout: default
       {% if page.fonte %}<div><dt>Fonte</dt><dd>{{ page.fonte }}</dd></div>{% endif %}
       {% if page.data %}<div><dt>Atualizado</dt><dd>{{ page.data | date: '%d/%m/%Y' }}</dd></div>{% endif %}
     </dl>
-    {% if page.pdf %}
-    <a class="botao" href="{{ page.pdf | relative_url }}" target="_blank" rel="noopener" data-goatcounter-click="pdf{{ page.url }}" data-goatcounter-title="PDF: {{ page.title | escape }}">Baixar PDF ↓</a>
-    {% endif %}
+    <div class="acoes-pdf">
+      {% if page.pdf %}
+      <a class="botao" href="{{ page.pdf | relative_url }}" target="_blank" rel="noopener" data-goatcounter-click="pdf{{ page.url }}" data-goatcounter-title="PDF: {{ page.title | escape }}">Baixar PDF completo ↓</a>
+      {% endif %}
+      {% include botao-pdf.html %}
+    </div>
   </header>
   <div class="conteudo">
     {{ content }}
   </div>
+  <div class="acoes-pdf acoes-fim">{% include botao-pdf.html %}</div>
   <aside class="nota-final">
     <p class="manuscrito">Achou um erro ou ficou com dúvida? Me chama no <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">@{{ site.instagram }}</a>.</p>
   </aside>

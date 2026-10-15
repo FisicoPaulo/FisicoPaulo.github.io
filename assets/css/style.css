@@ -210,3 +210,38 @@ h1, h2, h3 { font-family: var(--titulo); letter-spacing: -0.02em; line-height: 1
   body { font-size: 1.06rem; }
 }
 .card[hidden] { display: none; }
+
+/* ---------- botões de PDF ---------- */
+.acoes-pdf { display: flex; flex-wrap: wrap; gap: 10px; }
+button.botao { cursor: pointer; font-family: var(--titulo); }
+.acoes-fim { margin-top: 48px; }
+.so-impressao { display: none; }
+
+/* ---------- versão para PDF / impressão ---------- */
+@media print {
+  @page { size: A4; margin: 18mm 16mm; }
+  :root {
+    --fundo: #ffffff; --fundo-2: #f6f6f4; --fundo-3: #efefec;
+    --texto: #111111; --texto-2: #333333; --texto-3: #666666;
+    --destaque: #b8643a; --destaque-escuro: #b8643a; --linha: #d6d6d2;
+  }
+  body { background: #fff; color: #111; font-size: 11.5pt; line-height: 1.5; }
+  .topo, .rodape, .voltar, .acoes-pdf, .nota-final { display: none !important; }
+  main { padding: 0; max-width: none; }
+  .material { max-width: none; padding: 0; }
+  .so-impressao { display: block; }
+  .cabecalho-impressao {
+    font-family: var(--mono); font-size: 8.5pt; color: var(--texto-3);
+    border-bottom: 1px solid var(--linha); padding-bottom: 6px; margin: 0 0 10px;
+  }
+  .material-topo { padding: 8px 0 14px; }
+  .material-topo h1 { font-size: 22pt; }
+  .lead { font-size: 12pt; }
+  .conteudo p, .conteudo li { color: #111; }
+  .conteudo h2 { font-size: 15pt; margin: 26px 0 10px; break-after: avoid; }
+  .conteudo h3 { font-size: 12.5pt; margin: 18px 0 6px; break-after: avoid; }
+  .katex-display, .resultado, .ferramenta, .dica, table, blockquote { break-inside: avoid; }
+  .katex-display { overflow: visible; }
+  .resultado { background: #fff; }
+  a { color: inherit; text-decoration: none; }
+}
