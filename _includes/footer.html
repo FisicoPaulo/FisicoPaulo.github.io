@@ -1,0 +1,11 @@
+<footer class="rodape">
+  <p class="manuscrito">Salve, compartilhe e bons estudos!</p>
+  <div class="rodape-linha">
+    <span>{{ site.title }} · {{ 'now' | date: '%Y' }}</span>
+    <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">@{{ site.instagram }}</a>
+  </div>
+</footer>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$$',right:'$$',display:true}],throwOnError:false})"></script>
+<script defer src="{{ '/assets/js/filtro.js' | relative_url }}"></script>

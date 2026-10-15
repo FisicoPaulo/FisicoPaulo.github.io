@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="hero">
+  <p class="sobretitulo">01 / Caderno aberto</p>
+  <h1>Física de graduação,<br><span class="destaque">conta por conta.</span></h1>
+  <p class="lead">Solucionários comentados e resumos para quem estuda física, engenharia e áreas afins. Primeiro o assunto e as ferramentas, depois os dados e, por fim, a solução com todas as contas abertas.</p>
+  <div class="hero-acoes">
+    <a class="botao" href="{{ '/solucionarios/' | relative_url }}">Ver solucionários</a>
+    <a class="botao botao-linha" href="{{ '/resumos/' | relative_url }}">Ver resumos</a>
+  </div>
+  <p class="anotacao manuscrito">não é pra decorar,<br>é pra entender ↘</p>
+</section>
+
+<section class="secao">
+  <h2 class="titulo-secao"><span>02</span> Como os solucionários são feitos</h2>
+  <ol class="metodo">
+    <li><strong>Assunto e ferramentas</strong><span>Do que trata a questão e quais leis, teoremas e fórmulas ela pede.</span></li>
+    <li><strong>Dados fornecidos</strong><span>Tudo o que o enunciado dá, com unidades, separado antes de começar.</span></li>
+    <li><strong>Solução</strong><span>O caminho mais didático, com cada passagem algébrica visível e o resultado em destaque.</span></li>
+  </ol>
+</section>
+
+<section class="secao">
+  <h2 class="titulo-secao"><span>03</span> Publicados recentemente</h2>
+  {% assign todos = site.resumos | concat: site.solucionarios | sort: 'data' | reverse %}
+  <div class="grade">
+    {% for item in todos limit: 6 %}{% include card.html item=item %}{% endfor %}
+  </div>
+</section>
+
+<section class="secao">
+  <h2 class="titulo-secao"><span>04</span> Por disciplina</h2>
+  {% assign disciplinas = todos | map: 'disciplina' | uniq | sort %}
+  <ul class="disciplinas">
+    {% for d in disciplinas %}
+      {% assign n = todos | where: 'disciplina', d | size %}
+      <li><span>{{ d }}</span><span class="contagem">{{ n }} {% if n == 1 %}material{% else %}materiais{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+</section>

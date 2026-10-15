@@ -1,0 +1,11 @@
+<a class="card" href="{{ include.item.url | relative_url }}"
+   data-disciplina="{{ include.item.disciplina }}"
+   data-busca="{{ include.item.title | downcase }} {{ include.item.disciplina | downcase }} {{ include.item.assunto | downcase }} {{ include.item.fonte | downcase }}">
+  <span class="card-tipo">{{ include.item.tipo }}</span>
+  <h3>{{ include.item.title }}</h3>
+  {% if include.item.descricao %}<p>{{ include.item.descricao }}</p>{% endif %}
+  <span class="card-meta">
+    <span>{{ include.item.disciplina }}</span>
+    {% if include.item.pdf %}<span class="tag-pdf">PDF</span>{% endif %}
+  </span>
+</a>

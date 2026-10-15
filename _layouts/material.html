@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign colecao = site[page.collection] %}
+<article class="material">
+  <a class="voltar" href="{{ '/' | append: page.collection | append: '/' | relative_url }}">← {{ page.collection | capitalize | replace: 'Solucionarios', 'Solucionários' }}</a>
+  <header class="material-topo">
+    <span class="card-tipo">{{ page.tipo }} · {{ page.disciplina }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.descricao %}<p class="lead">{{ page.descricao }}</p>{% endif %}
+    <dl class="ficha">
+      {% if page.assunto %}<div><dt>Assunto</dt><dd>{{ page.assunto }}</dd></div>{% endif %}
+      {% if page.fonte %}<div><dt>Fonte</dt><dd>{{ page.fonte }}</dd></div>{% endif %}
+      {% if page.data %}<div><dt>Atualizado</dt><dd>{{ page.data | date: '%d/%m/%Y' }}</dd></div>{% endif %}
+    </dl>
+    {% if page.pdf %}
+    <a class="botao" href="{{ page.pdf | relative_url }}" target="_blank" rel="noopener">Baixar PDF ↓</a>
+    {% endif %}
+  </header>
+  <div class="conteudo">
+    {{ content }}
+  </div>
+  <aside class="nota-final">
+    <p class="manuscrito">Achou um erro ou ficou com dúvida? Me chama no <a href="https://instagram.com/{{ site.instagram }}" target="_blank" rel="noopener">@{{ site.instagram }}</a>.</p>
+  </aside>
+</article>

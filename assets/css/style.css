@@ -1,0 +1,212 @@
+/* physics.jpaulo / estudos
+   Fundo preto, texto branco quente, um único destaque em pêssego.
+   Títulos em sans geométrica, corpo em serif, rótulos em monospace,
+   anotações manuscritas em Kalam. */
+
+:root {
+  --fundo: #0b0b0b;
+  --fundo-2: #141414;
+  --fundo-3: #1c1c1c;
+  --texto: #f4f4f2;
+  --texto-2: #b9b9b4;
+  --texto-3: #7d7d78;
+  --destaque: #f2b38f;
+  --destaque-escuro: #c98a66;
+  --linha: #2a2a28;
+
+  --titulo: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --corpo: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --mao: 'Kalam', 'Comic Sans MS', cursive;
+
+  --largura: 1080px;
+  --texto-largura: 720px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--corpo);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--destaque); color: var(--fundo); }
+a { color: var(--destaque); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--texto); }
+img { max-width: 100%; height: auto; }
+
+main { max-width: var(--largura); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- topo ---------- */
+.topo {
+  max-width: var(--largura); margin: 0 auto; padding: 22px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  border-bottom: 1px solid var(--linha);
+}
+.marca { display: flex; align-items: center; gap: 12px; color: var(--texto); text-decoration: none; }
+.marca-psi {
+  width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
+  border: 1px solid var(--destaque); color: var(--destaque);
+  font-family: var(--corpo); font-style: italic; font-size: 1.4rem;
+}
+.marca-texto { font-family: var(--titulo); font-weight: 700; letter-spacing: -0.01em; }
+.marca-texto .ponto { color: var(--destaque); }
+.marca-texto em { font-style: normal; font-weight: 500; color: var(--texto-3); }
+.menu { display: flex; gap: 22px; font-family: var(--mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.menu a { color: var(--texto-2); text-decoration: none; padding: 4px 0; border-bottom: 1px solid transparent; }
+.menu a:hover, .menu a.ativo { color: var(--texto); border-bottom-color: var(--destaque); }
+
+/* ---------- tipografia comum ---------- */
+h1, h2, h3 { font-family: var(--titulo); letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+.sobretitulo, .card-tipo {
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--destaque); margin: 0;
+}
+.lead { color: var(--texto-2); font-size: 1.2rem; max-width: 640px; }
+.manuscrito { font-family: var(--mao); color: var(--destaque); }
+.destaque { color: var(--destaque); }
+
+.botao {
+  display: inline-block; font-family: var(--titulo); font-weight: 700; font-size: 0.95rem;
+  padding: 13px 22px; border-radius: 999px; text-decoration: none;
+  background: var(--destaque); color: var(--fundo); border: 1px solid var(--destaque);
+  transition: transform .15s ease, background .15s ease;
+}
+.botao:hover { color: var(--fundo); background: var(--texto); border-color: var(--texto); transform: translateY(-1px); }
+.botao-linha { background: transparent; color: var(--texto); border-color: var(--texto-3); }
+.botao-linha:hover { background: transparent; color: var(--destaque); border-color: var(--destaque); }
+
+/* ---------- home ---------- */
+.hero { position: relative; padding: 96px 0 72px; border-bottom: 1px solid var(--linha); }
+.hero h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); font-weight: 800; margin: 18px 0 22px; }
+.hero-acoes { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.anotacao {
+  position: absolute; right: 0; top: 110px; font-size: 1.5rem; line-height: 1.2;
+  transform: rotate(-6deg); text-align: right;
+}
+
+.secao { padding: 64px 0 8px; }
+.titulo-secao {
+  display: flex; align-items: baseline; gap: 16px; font-size: 1.5rem; font-weight: 700;
+  padding-bottom: 14px; margin-bottom: 28px; border-bottom: 1px solid var(--linha);
+}
+.titulo-secao span { font-family: var(--mono); font-weight: 400; font-size: 0.9rem; color: var(--destaque); }
+
+.metodo { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: passo; }
+.metodo li {
+  counter-increment: passo; background: var(--fundo-2); border: 1px solid var(--linha); border-radius: 14px;
+  padding: 22px; display: flex; flex-direction: column; gap: 8px;
+}
+.metodo li::before { content: counter(passo, decimal-leading-zero); font-family: var(--mao); font-size: 1.6rem; color: var(--destaque); line-height: 1; }
+.metodo strong { font-family: var(--titulo); font-size: 1.05rem; }
+.metodo span { color: var(--texto-2); font-size: 1rem; }
+
+.disciplinas { list-style: none; margin: 0; padding: 0; }
+.disciplinas li {
+  display: flex; justify-content: space-between; gap: 16px; padding: 14px 0;
+  border-bottom: 1px dashed var(--linha); font-family: var(--titulo); font-weight: 500;
+}
+.contagem { font-family: var(--mono); font-size: 0.85rem; color: var(--texto-3); }
+
+/* ---------- cards ---------- */
+.grade { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
+.card {
+  display: flex; flex-direction: column; gap: 10px; padding: 22px; min-height: 190px;
+  background: var(--fundo-2); border: 1px solid var(--linha); border-radius: 14px;
+  color: var(--texto); text-decoration: none; transition: border-color .15s ease, transform .15s ease;
+}
+.card:hover { color: var(--texto); border-color: var(--destaque); transform: translateY(-2px); }
+.card h3 { font-size: 1.2rem; font-weight: 700; }
+.card p { margin: 0; color: var(--texto-2); font-size: 0.98rem; line-height: 1.5; }
+.card-meta {
+  margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 0.78rem; color: var(--texto-3); padding-top: 10px; border-top: 1px solid var(--linha);
+}
+.tag-pdf { color: var(--destaque); border: 1px solid var(--destaque-escuro); border-radius: 6px; padding: 1px 7px; }
+
+/* ---------- listas com filtro ---------- */
+.cabecalho-pagina { padding: 72px 0 32px; }
+.cabecalho-pagina h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin: 14px 0 10px; max-width: 760px; }
+.filtros { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
+.busca {
+  width: 100%; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--linha);
+  background: var(--fundo-2); color: var(--texto); font: inherit; font-size: 1rem;
+}
+.busca:focus { outline: none; border-color: var(--destaque); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-family: var(--mono); font-size: 0.8rem; padding: 7px 14px; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--texto-2); border: 1px solid var(--linha);
+}
+.chip:hover { color: var(--texto); border-color: var(--texto-3); }
+.chip.ativo { background: var(--destaque); color: var(--fundo); border-color: var(--destaque); }
+.vazio { color: var(--texto-3); font-style: italic; }
+
+/* ---------- página de material ---------- */
+.material { max-width: var(--texto-largura); margin: 0 auto; padding: 48px 0 24px; }
+.voltar { font-family: var(--mono); font-size: 0.82rem; color: var(--texto-3); text-decoration: none; }
+.voltar:hover { color: var(--destaque); }
+.material-topo { padding: 26px 0 30px; border-bottom: 1px solid var(--linha); margin-bottom: 8px; }
+.material-topo h1 { font-size: clamp(2rem, 5vw, 2.9rem); font-weight: 800; margin: 12px 0 12px; }
+.ficha { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 20px 0 24px; }
+.ficha div { display: flex; flex-direction: column; }
+.ficha dt { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--texto-3); }
+.ficha dd { margin: 0; font-size: 1rem; }
+
+.conteudo { counter-reset: secao; }
+.conteudo h2 {
+  counter-increment: secao; display: flex; align-items: baseline; gap: 14px;
+  font-size: 1.45rem; font-weight: 700; margin: 52px 0 18px; padding-bottom: 12px; border-bottom: 1px solid var(--linha);
+}
+.conteudo h2::before { content: counter(secao, decimal-leading-zero); font-family: var(--mono); font-weight: 400; font-size: 0.85rem; color: var(--destaque); }
+.conteudo h3 { font-size: 1.12rem; font-weight: 700; margin: 34px 0 10px; color: var(--texto); }
+.conteudo p, .conteudo li { color: #e4e4e0; }
+.conteudo strong { color: var(--texto); }
+.conteudo ul, .conteudo ol { padding-left: 1.3em; }
+.conteudo li { margin: 6px 0; }
+.conteudo li::marker { color: var(--destaque); }
+.conteudo hr { border: 0; border-top: 1px dashed var(--linha); margin: 40px 0; }
+.conteudo code { font-family: var(--mono); font-size: 0.88em; background: var(--fundo-3); padding: 2px 6px; border-radius: 5px; }
+.conteudo blockquote {
+  margin: 24px 0; padding: 4px 0 4px 20px; border-left: 2px solid var(--destaque);
+  font-family: var(--mao); font-size: 1.25rem; color: var(--destaque);
+}
+.conteudo blockquote p { color: inherit; margin: 6px 0; }
+.conteudo table { width: 100%; border-collapse: collapse; font-size: 0.98rem; margin: 20px 0; display: block; overflow-x: auto; }
+.conteudo th, .conteudo td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--linha); }
+.conteudo th { font-family: var(--mono); font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--destaque); }
+
+/* equações */
+.katex { font-size: 1.08em; }
+.katex-display { margin: 18px 0; padding: 6px 0; overflow-x: auto; overflow-y: hidden; }
+
+/* caixas: use {: .resultado } , {: .ferramenta } ou {: .dica } depois do parágrafo no Markdown */
+.resultado, .ferramenta, .dica { border-radius: 12px; padding: 14px 20px; margin: 22px 0; }
+.resultado { border: 1.5px solid var(--destaque); background: rgba(242, 179, 143, 0.06); }
+.resultado::before { content: 'Resultado'; display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--destaque); margin-bottom: 4px; }
+.ferramenta { background: var(--fundo-2); border: 1px solid var(--linha); }
+.dica { font-family: var(--mao); font-size: 1.2rem; color: var(--destaque) !important; border: 1px dashed var(--destaque-escuro); }
+
+.nota-final { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--linha); }
+.nota-final p { font-size: 1.25rem; margin: 0; }
+
+/* ---------- rodapé ---------- */
+.rodape { max-width: var(--largura); margin: 80px auto 0; padding: 40px 24px 36px; border-top: 1px solid var(--linha); }
+.rodape .manuscrito { font-size: 1.6rem; margin: 0 0 18px; }
+.rodape-linha { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-family: var(--mono); font-size: 0.8rem; color: var(--texto-3); }
+
+/* ---------- celular ---------- */
+@media (max-width: 760px) {
+  main, .topo, .rodape { padding-left: 16px; padding-right: 16px; }
+  .hero { padding: 56px 0 48px; }
+  .anotacao { position: static; transform: rotate(-3deg); text-align: left; margin-top: 28px; }
+  .metodo { grid-template-columns: 1fr; }
+  .menu { gap: 16px; font-size: 0.78rem; }
+  body { font-size: 1.06rem; }
+}
+.card[hidden] { display: none; }

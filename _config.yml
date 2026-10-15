@@ -1,0 +1,33 @@
+title: "Caderno de Física"
+tagline: "Solucionários e resumos para a graduação"
+description: "Solucionários comentados e resumos de física para estudantes de graduação, por @physics.jpaulo."
+author: "Paulo (@physics.jpaulo)"
+instagram: "physics.jpaulo"
+lang: pt-BR
+
+# Para um site de projeto (github.com/FisicoPaulo/<repo>), use baseurl: "/<repo>".
+# Para o site principal (repositório FisicoPaulo.github.io), deixe baseurl vazio.
+baseurl: ""
+url: "https://fisicopaulo.github.io"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  hard_wrap: false
+
+collections:
+  resumos:
+    output: true
+    permalink: /resumos/:name/
+  solucionarios:
+    output: true
+    permalink: /solucionarios/:name/
+
+defaults:
+  - scope: { path: "", type: resumos }
+    values: { layout: material, tipo: Resumo }
+  - scope: { path: "", type: solucionarios }
+    values: { layout: material, tipo: Solucionário }
+
+exclude: [README.md, assets/pdf/LEIAME.md, Gemfile, Gemfile.lock, vendor]

@@ -1,0 +1,13 @@
+{% assign itens = include.itens | sort: 'data' | reverse %}
+{% assign disciplinas = itens | map: 'disciplina' | uniq | sort %}
+<div class="filtros" data-filtros>
+  <input type="search" class="busca" placeholder="Buscar por assunto, livro, disciplina..." aria-label="Buscar">
+  <div class="chips">
+    <button class="chip ativo" data-filtro="">Todas</button>
+    {% for d in disciplinas %}<button class="chip" data-filtro="{{ d }}">{{ d }}</button>{% endfor %}
+  </div>
+</div>
+<div class="grade" data-grade>
+  {% for item in itens %}{% include card.html item=item %}{% endfor %}
+</div>
+<p class="vazio" data-vazio hidden>Nada encontrado. Tente outra busca.</p>
