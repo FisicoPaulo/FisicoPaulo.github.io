@@ -22,5 +22,9 @@ Este site reúne os solucionários e resumos que preparo para estudantes de grad
 
 Os materiais são livres para estudo. Se for compartilhar, cite a fonte e marque o [@physics.jpaulo](https://instagram.com/physics.jpaulo).
 
+## Privacidade
+
+O site conta acessos de forma anônima com o [GoatCounter](https://www.goatcounter.com), sem cookies e sem identificar visitantes. Serve só para saber quais materiais estão sendo mais usados.
+
 </div>
 </article>

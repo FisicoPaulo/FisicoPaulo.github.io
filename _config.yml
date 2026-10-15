@@ -3,6 +3,10 @@ tagline: "Solucionários e resumos para a graduação"
 description: "Solucionários comentados e resumos de física para estudantes de graduação, por @physics.jpaulo."
 author: "Paulo (@physics.jpaulo)"
 instagram: "physics.jpaulo"
+
+# Monitoramento de acesso (GoatCounter, sem cookies). Código da conta em goatcounter.com.
+# Deixe vazio para desligar.
+goatcounter: "fisicopaulo"
 lang: pt-BR
 
 # Para um site de projeto (github.com/FisicoPaulo/<repo>), use baseurl: "/<repo>".

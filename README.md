@@ -31,6 +31,10 @@ pdf: /assets/pdf/lista2-q5.pdf # opcional: botão "Baixar PDF"
 
 Os arquivos em `_solucionarios/` e `_resumos/` marcados como "Exercício modelo" são exemplos e podem ser apagados.
 
+## Monitoramento de acesso
+
+O site usa o [GoatCounter](https://www.goatcounter.com) (gratuito, sem cookies). O painel fica em https://fisicopaulo.goatcounter.com e mostra visitas por página, origem (Instagram, Google...), país, aparelho e cliques em "Baixar PDF" (aparecem como `pdf/...`). Para trocar a conta, mude `goatcounter:` no `_config.yml`; deixe vazio para desligar.
+
 ## Testar localmente
 
 ```sh
